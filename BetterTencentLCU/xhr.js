@@ -38,5 +38,13 @@ export default[
             response.response = JSON.stringify(respJson)
             
         }
+    },
+    {
+        // 导航栏只显示图标
+        matcher: "/lol-client-config/v3/client-config/lol.client_settings.navigation.navBarDisplayMode",
+        preSend: (XhrRequestConfig) => {},
+        postSend: (response) => {
+            response.response = "FUCK U TENCENT"
+        }
     }
 ]
