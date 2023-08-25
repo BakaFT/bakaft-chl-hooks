@@ -1,0 +1,19 @@
+{
+  "name": "bakaft-chl-hooks",
+  "version": "1.0.0",
+  "description": "My CustomHookLoader scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BakaFT/bakaft-chl-hooks.git"
+  },
+  "author": "BakaFT",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/BakaFT/bakaft-chl-hooks/issues"
+  },
+  "homepage": "https://github.com/BakaFT/bakaft-chl-hooks#readme"
+}
