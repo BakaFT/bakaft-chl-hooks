@@ -1,6 +1,6 @@
 {
   "name": "bakaft-chl-hooks",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "My CustomHookLoader scripts",
   "main": "index.js",
   "scripts": {
