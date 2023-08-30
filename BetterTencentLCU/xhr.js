@@ -1,4 +1,28 @@
-export default[
+const TICKER_MESSAGES = [
+    {
+        matcher: "/lol-service-status/v1/ticker-messages",
+        preSend: (XhrRequestConfig) => { },
+        postSend: (response) => {
+            const myMessage = [
+                {
+                    "createdAt": "2020-03-28T19:51:24.080320+00:00",
+                    "heading": "您正在使用 BetterTencentLCU 插件",
+                    "message": "导航栏文字隐藏功能有概率失效,可通过Ctrl+Shift+R刷新客户端解决",
+                    "severity": "info",
+                    "updatedAt": "2020-03-28T19:51:00+00:00"
+                },
+            ]
+            const originalMessage = JSON.parse(response.response)
+            const finalMessage= [
+                ...originalMessage,
+                ...myMessage
+            ]
+            response.response = JSON.stringify(finalMessage)
+        }
+    }
+]
+
+const MITM_FUNCTIONS = [
     {
         // 开启聊天小窗 打开个人状态
         matcher: "/lol-platform-config/v1/namespaces/LcuSocial",
@@ -47,4 +71,9 @@ export default[
             response.response = "FUCK U TENCENT"
         }
     }
+]
+
+export default[
+    ...MITM_FUNCTIONS,
+    ...TICKER_MESSAGES
 ]
