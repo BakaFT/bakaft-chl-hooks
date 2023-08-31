@@ -6,8 +6,8 @@ const TICKER_MESSAGES = [
             const myMessage = [
                 {
                     "createdAt": "2020-03-28T19:51:24.080320+00:00",
-                    "heading": "您正在使用 BetterTencentLCU 插件",
-                    "message": "导航栏文字隐藏功能有概率失效,可通过Ctrl+Shift+R刷新客户端解决",
+                    "heading": "嗨",
+                    "message": "您正在使用国服优化插件,如有不生效现象请尝试Ctrl+Shift+R刷新客户端",
                     "severity": "info",
                     "updatedAt": "2020-03-28T19:51:00+00:00"
                 },
@@ -63,14 +63,6 @@ const MITM_FUNCTIONS = [
             
         }
     },
-    {
-        // 导航栏只显示图标
-        matcher: "/lol-client-config/v3/client-config/lol.client_settings.navigation.navBarDisplayMode",
-        preSend: (XhrRequestConfig) => {},
-        postSend: (response) => {
-            response.response = "FUCK U TENCENT"
-        }
-    }
 ]
 
 export default[
