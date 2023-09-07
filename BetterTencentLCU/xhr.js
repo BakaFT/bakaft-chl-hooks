@@ -58,7 +58,6 @@ const MITM_FUNCTIONS = [
         postSend: (response) => {
             const respJson = JSON.parse(response.response)
             respJson["enabled"] = true
-            respJson["maxLootItemsSizeMassCraft"] = "99999"
             response.response = JSON.stringify(respJson)
             
         }
