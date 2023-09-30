@@ -66,5 +66,5 @@ const MITM_FUNCTIONS = [
 
 export default[
     ...MITM_FUNCTIONS,
-    ...TICKER_MESSAGES
+    // ...TICKER_MESSAGES
 ]
