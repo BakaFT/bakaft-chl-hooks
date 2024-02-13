@@ -1,3 +1,15 @@
+const STATUS_ANNOUNCEMENT = [
+    {
+        matcher: "/lol-service-status/v1/lcu-status",
+        preSend: (XhrRequestConfig) => { },
+        postSend: (response) => {
+            const respJson = JSON.parse(response.response)
+            respJson['humanReadableUrl'] = 'https://wwp.lanzoul.com/i3RZQ1o5x8cj'
+            response.response = JSON.stringify(respJson)
+        }
+    }
+]
+
 const TICKER_MESSAGES = [
     {
         matcher: "/lol-service-status/v1/ticker-messages",
@@ -6,9 +18,9 @@ const TICKER_MESSAGES = [
             const myMessage = [
                 {
                     "createdAt": "2020-03-28T19:51:24.080320+00:00",
-                    "heading": "嗨",
-                    "message": "您正在使用国服优化插件,如有不生效现象请尝试Ctrl+Shift+R刷新客户端",
-                    "severity": "info",
+                    "heading": "Pengu Loader整合包更新",
+                    "message": `当前版本已过期，请点击下方蓝色的"服务状态"前往下载 2024/2/13 版本`,
+                    "severity": "error",
                     "updatedAt": "2020-03-28T19:51:00+00:00"
                 },
             ]
@@ -66,5 +78,6 @@ const MITM_FUNCTIONS = [
 
 export default[
     ...MITM_FUNCTIONS,
-    // ...TICKER_MESSAGES
+    ...TICKER_MESSAGES,
+    ...STATUS_ANNOUNCEMENT
 ]
